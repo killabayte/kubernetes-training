@@ -6,13 +6,13 @@ set -e
 RANDOM_STRING=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | tr '[:upper:]' '[:lower:]' | head -n 1)
 
 # it's important to set the AWS_REGION if not set. Change the default
-DEFAULT_REGION="eu-west-1"
+DEFAULT_REGION="us-west-2"
 AWS_REGION="${AWS_REGION:-${DEFAULT_REGION}}"
 
 export AWS_REGION
 
 # create s3 bucket
-if [ "$AWS_REGION" == "us-east-1" ] ; then
+if [ "$AWS_REGION" == "us-west-2" ] ; then
   aws s3api create-bucket --bucket helm-${RANDOM_STRING}
 else
   aws s3api create-bucket --bucket helm-${RANDOM_STRING} --region $AWS_REGION --create-bucket-configuration LocationConstraint=${AWS_REGION}
