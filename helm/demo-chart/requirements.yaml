@@ -4,4 +4,4 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: mariadb.enabled
   tags:
-    - docker-project-database
+    - node-pilot-app-database

@@ -5,7 +5,7 @@
 replicaCount: 3
 
 image:
-  repository: yaroslavkostyannikov/docker-project
+  repository: yaroslavkostyannikov/node-pilot-app
   tag: v0.0.1
   pullPolicy: IfNotPresent
 
@@ -20,7 +20,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - docker-project.killabayte.com
+    - node-pilot-app.killabayte.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
