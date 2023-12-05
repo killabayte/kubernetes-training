@@ -32,4 +32,6 @@ func main() {
 	}()
 
 	fmt.Printf("Starting TLS server on :8443\n")
+	handler := http.NewServeMux()
+
 }
