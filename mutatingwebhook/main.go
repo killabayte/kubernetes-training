@@ -35,4 +35,10 @@ func main() {
 	handler := http.NewServeMux()
 	handler.HandleFunc("/webhook", s.postWebhook)
 
+	https := &http.Server{
+		Addr:      ":8443",
+		TLSConfig: serverTLSConf,
+		Handler:   handler,
+	}
+
 }
