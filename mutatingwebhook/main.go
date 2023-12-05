@@ -15,3 +15,9 @@ s := Server{
 	ClientTLSConf: clientTLSConf,
 	CaPEM: caPEM,
 }
+
+go func(){
+	handler := http.NewServeMux()
+
+	handler.HandleFunc("/ca.pem", s.getCA)
+}
