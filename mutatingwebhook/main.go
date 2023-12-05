@@ -9,3 +9,9 @@ func main() {
 		panic(err)
 	}
 }
+
+s := Server{
+	ServerTLSConf: serverTLSConf,
+	ClientTLSConf: clientTLSConf,
+	CaPEM: caPEM,
+}
