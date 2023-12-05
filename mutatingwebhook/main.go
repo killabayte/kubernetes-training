@@ -30,4 +30,6 @@ func main() {
 			log.Fatal(err)
 		}
 	}()
+
+	fmt.Printf("Starting TLS server on :8443\n")
 }
